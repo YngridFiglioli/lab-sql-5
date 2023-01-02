@@ -14,21 +14,10 @@ use sakila;
 alter table staff drop picture;
 insert into staff (staff_id, first_name, last_name, address_id, email, store_id, active, username)
 values (3,'Tammy', 'Sanders','4','Tammy.Sanders@sakilastaff.com','2',1,'Tammy');
-insert into rental (rental_date, inventory_id, customer_id, staff_id, last_update) values (now(), 1, 130, 1, now());
-select * from customer where active = 0; 
-create table deleted_users (
-    customer_id int unique not null primary key,
-    store_id int not null,
-    first_name varchar(45) default null,
-    last_name varchar(45) default null,
-    email varchar(50) default null,
-    address_id int default null,
-    active tinyint(1) default null,
-    create_date datetime default null,
-    last_update timestamp default null
-);
-drop table delet_users;
-set FOREIGN_KEY_CHECKS=0; delete from customer where active = 0;
-SET FOREIGN_KEY_CHECKS=1;
-select * from customer where active = 0;
+
+select * from customer where first_name = 'Charlotte' and last_name = 'Hunter';
+select * from staff where first_name = 'Mike' and last_name = 'Hillyer';
+select * from inventory where film_id = 1 and store_id = 1;
+
+
 
